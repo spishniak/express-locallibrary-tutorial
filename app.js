@@ -3,12 +3,20 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+//mongodb+srv://0994801676qqq:<password>@cluster0.2hlkb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+//Устанавливаем соединение с mongoose
 
+var mongoDB = 'mongodb+srv://0994801676qqq:0994801676qqq@cluster0.2hlkb.mongodb.net/librory?retryWrites=true&w=majority';//замените url!!!
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
