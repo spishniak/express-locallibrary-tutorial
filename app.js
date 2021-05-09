@@ -12,7 +12,7 @@ var app = express();
 //mongodb+srv://0994801676qqq:<password>@cluster0.2hlkb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //Устанавливаем соединение с mongoose
 
-var mongoDB = 'mongodb+srv://0994801676qqq:0994801676qqq@cluster0.2hlkb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';//замените url!!!
+var mongoDB = 'mongodb+srv://0994801676qqq:0994801676qqq@cluster0.2hlkb.mongodb.net/librory?retryWrites=true&w=majority';//замените url!!!
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
